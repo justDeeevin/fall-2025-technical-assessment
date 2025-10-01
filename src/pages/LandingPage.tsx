@@ -1,8 +1,9 @@
-import { useState } from "react";
 import ProfessorCard from "../components/ProfessorCard";
+import SearchBar from "../components/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
-  const [query, setQuery] = useState<string | undefined>(undefined);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -23,25 +24,7 @@ export default function LandingPage() {
           <h2 className="mt-[69.47px] text-black text-[36px] font-bold mb-[33px]">
             Enter a professor to start
           </h2>
-          <div className="flex flex-row mb-[83.12px]">
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Enter professor name..."
-              className="placeholder:text-[#8d8d8d] text-black text-[20.25px] rounded-l-[11.25px] border-[#d4d4d4] border-[1.13px] bg-white py-[13px] pl-[32.63px] w-[754.93px]"
-            />
-            <button
-              className="rounded-r-[11.25px] rounded-l-[0] bg-[#39302B] py-0 px-[19.13px]"
-              onClick={() => (window.location.href = `/results?q=${query}`)}
-            >
-              <img
-                src="/search.png"
-                alt="search icon"
-                className="w-[33.75px]"
-              />
-            </button>
-          </div>
+          <SearchBar onSubmit={(q) => navigate(`/results?query=${q}`)} />
           <h3 className="text-[#39302B] text-[22.5px] font-bold self-start">
             Recently Searched
           </h3>

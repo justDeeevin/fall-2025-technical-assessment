@@ -50,7 +50,7 @@ export default function ProfessorCard({
       <div className="flex flex-row justify-between items-center">
         <h3>{name}</h3>
         <div onClick={() => setOpen(!open)}>
-          <Arrow open={open} />
+          <Arrow rotation={open ? "" : "rotate-[-90deg]"} />
         </div>
       </div>
       <div className="flex flex-row items-center justify-between">

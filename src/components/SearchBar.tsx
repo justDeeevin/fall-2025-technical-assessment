@@ -9,13 +9,13 @@ export default function SearchBar({ onSubmit, initialValue }: Props) {
   const [query, setQuery] = useState<string | undefined>(initialValue);
 
   return (
-    <div className="flex flex-row mb-[83.12px]">
+    <div className="flex flex-row max-w-[826.94px] lg:w-full">
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Enter professor name..."
-        className="placeholder:text-[#8d8d8d] text-black text-[20.25px] rounded-l-[11.25px] border-[#d4d4d4] border-[1.13px] bg-white py-[13px] pl-[32.63px] w-[754.93px]"
+        className="placeholder:text-[#8d8d8d] text-black text-[20.25px] rounded-l-[11.25px] border-[#d4d4d4] border-[1.13px] bg-white py-[13px] pl-[32.63px] w-full"
         onKeyDown={(e) => {
           if (e.key === "Enter") onSubmit?.(query);
         }}

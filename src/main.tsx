@@ -21,7 +21,7 @@ root.render(
   <div className="h-screen bg-white">
     <BrowserRouter>
       <App />
-      <p className="text-[#aaaaaa] bottom-[0] text-center absolute w-full m-[32px] text-[16px]">
+      <p className="text-[#aaaaaa] bottom-[0] text-center absolute w-full py-[32px] text-[16px]">
         All data is gathered from the{" "}
         <a href="https://planetterp.com/" className="text-[#B95F5F]">
           <u>PlanetTerp</u>

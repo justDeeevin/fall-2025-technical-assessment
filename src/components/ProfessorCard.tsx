@@ -7,6 +7,7 @@ type Props = {
   image?: string;
   rating: number;
   classes: { [name: string]: Grade };
+  shouldHideIfSmall?: boolean;
 };
 
 type Grade =
@@ -28,6 +29,7 @@ export default function ProfessorCard({
   image = "/anonymous.jpg",
   rating,
   classes,
+  shouldHideIfSmall = false,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [className, setClassName] = useState<string>("");
@@ -44,7 +46,9 @@ export default function ProfessorCard({
     <div
       className={
         "flex flex-col rounded-[9px] border-[#c5c5c5] border-[1.13px] w-[254px] bg-[#fbfbfb] text-black p-[20px] text-[20.25px] gap-[20px] transition-all overflow-hidden " +
-        (open ? "max-h-[215px]" : "max-h-[73px]")
+        (open ? "max-h-[215px]" : "max-h-[73px]") +
+        " " +
+        (shouldHideIfSmall ? "max-md:hidden" : "")
       }
     >
       <div className="flex flex-row justify-between items-center">

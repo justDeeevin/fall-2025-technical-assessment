@@ -9,7 +9,7 @@ export default function ResultsPage() {
   return (
     <>
       <div
-        className="absolute top-[102px] left-[112px] flex flex-row gap-[20px] cursor-pointer"
+        className="absolute md:top-[102px] top-10 lg:left-[112px] left-10 flex flex-row gap-[20px] cursor-pointer"
         onClick={() => navigate("/")}
       >
         <Arrow rotation="rotate-90" />
@@ -23,7 +23,7 @@ export default function ResultsPage() {
               setSearchParams({ q: q ?? "" });
             }}
           />
-          <h1 className="self-start text-[#39302B] text-[24px] font-bold">
+          <h1 className="self-start text-[#39302B] text-[24px] font-bold lg:mt-[69.47px] mt-10">
             Search Results
           </h1>
         </div>

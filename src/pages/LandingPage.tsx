@@ -24,7 +24,9 @@ export default function LandingPage() {
           <h2 className="lg:mt-[69.47px] mt-10 text-black md:text-[36px] text-3xl font-bold mb-[33px] text-center">
             Enter a professor to start
           </h2>
-          <SearchBar onSubmit={(q) => navigate(`/results?query=${q}`)} />
+          <SearchBar
+            onSubmit={(q) => navigate(`/results${q ? `?q=${q}` : ""}`)}
+          />
           <h3 className="text-[#39302B] text-[22.5px] font-bold lg:self-start mb-[33px] mt-10">
             Recently Searched
           </h3>

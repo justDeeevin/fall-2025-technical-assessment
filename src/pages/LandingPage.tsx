@@ -35,7 +35,7 @@ export default function LandingPage() {
               <ProfessorCard
                 name="Jane Middle Doe"
                 rating={3.5}
-                classes={{ "CMSC 132": "A+", "ENGL 101": "B+" }}
+                classes={{ "CMSC 132": 4.0, "ENGL 101": 3.8 }}
                 key={i}
                 shouldHideIfSmall={i > 1}
               />

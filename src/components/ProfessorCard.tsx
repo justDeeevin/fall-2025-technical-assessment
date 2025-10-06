@@ -6,23 +6,9 @@ type Props = {
   name: string;
   image?: string;
   rating: number;
-  classes: { [name: string]: Grade };
+  classes: { [name: string]: number | undefined };
   shouldHideIfSmall?: boolean;
 };
-
-type Grade =
-  | "A+"
-  | "A"
-  | "A-"
-  | "B+"
-  | "B"
-  | "B-"
-  | "C+"
-  | "C"
-  | "C-"
-  | "D+"
-  | "D"
-  | "D-";
 
 export default function ProfessorCard({
   name,
@@ -70,7 +56,7 @@ export default function ProfessorCard({
           <Star fill={fill} key={i} />
         ))}
       </div>
-      <div className="flex flex-row gap-[30px]">
+      <div className="flex flex-row gap-[25px]">
         <select
           className="px-[8px] py-[5px] rounded-[9px] bg-[#fbfbfb] border-[#c5c5c5] border-[1.13px] text-[14px]"
           value={className}
@@ -89,7 +75,10 @@ export default function ProfessorCard({
         </select>
         {className && (
           <p>
-            <span className="text-[24px]">{classes[className]}</span>&nbsp;
+            <span className="text-[24px]">
+              {classes[className]?.toFixed(1) ?? "N/A"}
+            </span>
+            &nbsp;
             <span className="text-[14px]">avg.</span>
           </p>
         )}

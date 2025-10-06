@@ -51,9 +51,12 @@ export default function ProfessorCard({
         (shouldHideIfSmall ? "max-md:hidden" : "")
       }
     >
-      <div className="flex flex-row justify-between items-center">
+      <div
+        onClick={() => setOpen(!open)}
+        className="flex flex-row justify-between items-center cursor-pointer"
+      >
         <h3>{name}</h3>
-        <div onClick={() => setOpen(!open)}>
+        <div>
           <Arrow rotation={open ? "" : "rotate-[-90deg]"} />
         </div>
       </div>
@@ -84,10 +87,12 @@ export default function ProfessorCard({
             </option>
           ))}
         </select>
-        <p>
-          <span className="text-[24px]">{classes[className]}</span>&nbsp;
-          <span className="text-[14px]">avg.</span>
-        </p>
+        {className && (
+          <p>
+            <span className="text-[24px]">{classes[className]}</span>&nbsp;
+            <span className="text-[14px]">avg.</span>
+          </p>
+        )}
       </div>
     </div>
   );
